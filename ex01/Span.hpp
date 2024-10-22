@@ -6,7 +6,7 @@
 /*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:05:22 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/10/22 11:30:35 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/10/22 17:59:49 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 # define SPAN_HPP
 
 # include <iostream>
-# include <set>
+# include <vector>
 # include <stdexcept>
+# include <algorithm>
 
 class Span {
 
 	private: 
 
 	unsigned int 	N;
-	std::set<int>	_container;
 
 	Span();
 
 	public:
+	std::vector<int>	_container;
 	Span(unsigned int n);
 	Span(Span const& copy);
 	~Span();
@@ -37,6 +38,7 @@ class Span {
 	void	addNumber(int nb);
 	int		shortestSpan();
 	int		longestSpan();
+	void	addRange();
 };
 
 #endif
